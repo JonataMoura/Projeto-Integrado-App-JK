@@ -4,7 +4,6 @@ import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
-
 import DefaultButton from "../DefaultButton/DefaultButton";
 
 export default function Cadastro() {
@@ -27,11 +26,10 @@ export default function Cadastro() {
         'Content-Type':'application/json'
       },
       body: JSON.stringify({
-        emailUser: input,
-        senhaUser: input2
+        email: input,
+        senha: input2
       })
-
-    })
+    }).then( res => res.json()).then(res => res)
   }
 
   return (

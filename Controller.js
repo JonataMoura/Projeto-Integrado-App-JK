@@ -15,8 +15,8 @@ app.post('/create', async(req,res)=>{
 
     try{
         let reqs = await UserModel.create({
-            'email' : req.body.emailUser,
-            'senha' : req.body.senhaUser
+            'email' : req.body.email,
+            'senha' : req.body.senha
          })
          res.json("msg: usuario cadastrado")
     }catch(err){
@@ -27,12 +27,11 @@ app.post('/create', async(req,res)=>{
 
 //Rota login
 app.post("/login", async (req, res) => {
-  console.log("login");
     const { email, senha } = req.body;
     try {
-      const reqs = await UserModel.findOne({ email: email });
-  
-      if(reqs.password === senha) {
+      const reqs = await UserModel.findOne({ where:{ email: email }})
+      console.log(reqs);
+      if(reqs.senha == senha) {
           try{
             res.status(200).json({
               email: email,

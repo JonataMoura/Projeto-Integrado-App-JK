@@ -22,26 +22,19 @@ export default function Login(){
 async function Login() 
 {
   console.log("chegou");
-  // let reqs = await fetch(config.urlRootNode + 'login', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Accept':'application/json',
-  //     'Content-Type':'application/json'
-  //   },
-  //   body: JSON.stringify({
-  //   
-  //   })
+  let reqs = await fetch(config.urlRootNode + 'login', {
+    method: 'POST',
+    headers: {
+      'Accept':'application/json',
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({
+     email: email,
+     senha: inputs
+    })
 
-  // }).then( re  emailUser: email,
-  //     senhaUser: inputss => console.log(res))
+  }).then( res => res.json()).then( res => console.log(res))
 
-  const reqs = await axios.post(config.urlRootNode + "login",
-  {
-    emailUser: email,
-        senhaUser: inputs
-  })
-
-  console.log(reqs);
 }
 
   return(
