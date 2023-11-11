@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import config from "../../config/config.json";
 import { Text, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import { TextInput } from 'react-native-paper'
+import { TextInput } from 'react-native-paper';
 import { Ionicons  } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 
@@ -46,11 +46,11 @@ if (reqs.status === "OK") {
 
   return(
     <View style={{flex: 1}}>
-      <ImageBackground source={require('../Assets/fundoLogin.jpg')} 
+      <ImageBackground source={require('../Assets/fundoTelaLogin.png')} 
         resizeMode="cover" style={{flex: 1, justifyContent: 'center'}}>
 
         <View style={{alignItems: 'center'}}>
-          <Image source={require('../Assets/logo.png')} />
+          <Image source={require('../Assets/logoSpaceCine.png')} />
         </View>
 
         <View style={styles.back}>
@@ -95,7 +95,7 @@ if (reqs.status === "OK") {
         <View style={{alignItems: 'center'}}>
           <DefaultButton
             buttonText={'Acessar'}
-            backgroundColor={'#26034D'}
+            backgroundColor={'#000000'}
             marginTop={14}
             click={Login}
             width={200}
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
 
   texto: {
     fontSize: 15,
-    color: '#904B9C',
-    fontSize: 18
-  },
+    color: '#000000',
+    fontSize: 18,
+  }
 });
