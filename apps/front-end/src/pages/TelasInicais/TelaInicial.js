@@ -1,6 +1,5 @@
 import { ImageBackground, Image, StyleSheet, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
 export default function App(){
@@ -17,11 +16,11 @@ export default function App(){
   return(
     <View style={{flex: 1}}>
 
-      <ImageBackground source={require('../../Assets/fundoInicio.jpeg')} resizeMode="cover" 
+      <ImageBackground source={require('../../../public/assets/fundoTelaLogin.png')} resizeMode="cover" 
         style={{flex: 1, justifyContent: 'center'}}>
 
           <View style={{alignItems: 'center'}}>
-            <Image source={require('../../Assets/logo.png')} />
+            {/* <Image source={require('../../../public/assets/7.png')} /> */}
 
           </View>
 

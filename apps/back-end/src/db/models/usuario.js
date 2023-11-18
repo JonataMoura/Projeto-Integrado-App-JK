@@ -29,7 +29,7 @@
 
 
 const { Sequelize, DataTypes } = require('sequelize')
-const db = require("../../db/conect")
+const db = require("../conect")
 const User = db.define('User', {
   id: {
     type: DataTypes.INTEGER,

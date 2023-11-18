@@ -49,13 +49,13 @@ export default function Inicio({ navigation }) {
   return (
     <ScrollView style={{flex: 1, backgroundColor: '#000000'}}>
 
-    <ImageBackground source={require('../../Assets/fundoPerfil.jpeg')} 
+    <ImageBackground source={require('../../../public/assets/fundoTelaLogin.png')} 
         resizeMode="cover" style={{justifyContent: 'center'}}>
 
       <TouchableOpacity onPress={() => navigation.navigate('Favoritos',{filmes: filmesFavoritos, addFilmeToFavoritos, filmesFavoritos})}>
         <View style={{alignItems: 'center'}}>
         <Image
-          source={require('../../Assets/logoInicio.png')}
+          source={require('../../../public/assets/logoInicio.png')}
         />
         </View>
       </TouchableOpacity>

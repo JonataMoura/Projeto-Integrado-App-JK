@@ -9,12 +9,12 @@ const EditDrawer = (props) => {
         <View style={{flex: 1, backgroundColor: '#000000'}}>
 {/*USUARIO*/}
             <DrawerContentScrollView {...props}>
-                <ImageBackground source={require('../Assets/fundoPerfil.jpeg')}
+                <ImageBackground source={require('../../public/assets/fundoPerfil.jpeg')}
                     style={{padding: 20}}>
 
                     <View style={{padding: 20}}>
                         <View >
-                            <Image source={require('../Assets/icon.png')} 
+                            <Image source={require('../../public/assets/icon.png')} 
                                 style={{height: 60, width: 60, borderRadius: 40, marginBottom: 10, marginRight: 20}}
                             />
                             <Text style={{color: '#FCFCFC', fontSize: 18, marginBottom: 5}}>Lucas</Text>

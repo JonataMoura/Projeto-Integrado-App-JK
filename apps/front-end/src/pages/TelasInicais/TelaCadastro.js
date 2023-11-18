@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import config from "../../db/config/config.json";
+//import config from "../../../apps/back-end/src/db/config/config.json";
 import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
-<<<<<<< HEAD:src/TelasInicais/TelaCadastro.js
-import DefaultButton from "../DefaultButton/DefaultButton";
-=======
-
 import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaCadastro.js
 
 export default function Cadastro() {
   const navigation = useNavigation();
@@ -26,15 +21,8 @@ export default function Cadastro() {
   //Envia os dados do formulario para o banco 
   async function registerUser() 
   {
-    let  reqs = await fetch(config.urlRootNode + 'create', {
+    let  reqs = await fetch( "", {
       method: 'POST',
-<<<<<<< HEAD:src/TelasInicais/TelaCadastro.js
-      headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({
-=======
 
       headers: {
         Accept: "application/json",
@@ -42,13 +30,10 @@ export default function Cadastro() {
       }, //Os parametros que queremos passar la para o banco de dados
       body: JSON.stringify({
 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaCadastro.js
         email: input,
         senha: input2
       })
     }).then( res => res.json()).then(res => res)
-<<<<<<< HEAD:src/TelasInicais/TelaCadastro.js
-=======
     console.log(reqs);
     if (reqs.status === "OK") {
       try {
@@ -58,7 +43,6 @@ export default function Cadastro() {
       }
     } 
 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaCadastro.js
   }
   
 
@@ -67,11 +51,11 @@ export default function Cadastro() {
     
     <View style={{ flex: 1 }}>
 
-      <ImageBackground source={require('../../Assets/fundoCadastro.jpg')}
+      <ImageBackground source={require('../../../public/assets/fundoTelaLogin.png')}
         resizeMode="cover" style={{ flex: 1, justifyContent: 'center' }}>
 
         <View style={{ alignItems: 'center' }}>
-          <Image source={require('../../Assets/logo.png')} />
+          <Image source={require('../../../public/assets/logoInicio.png')} />
 
         </View>
 
