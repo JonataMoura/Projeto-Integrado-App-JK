@@ -61,4 +61,5 @@ app.listen(port, async (req,res)=>{
     await db.sync({force: true}) // se quiser que o banco
 
     console.log("banco conectado");
+
 })
