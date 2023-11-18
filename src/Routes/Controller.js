@@ -1,8 +1,8 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const cors=require('cors');
-const UserModel = require('./models/usuario');
-const db = require("./db/conect")
+const UserModel = require('../db/models/usuario');
+const db = require("../db/conect")
 
 let app = express();
 app.use(cors());

@@ -5,13 +5,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator();
 
-import TelaInicial from './src/TelasInicais/TelaInicial';
-import TelaLogin from  './src/TelasInicais/TelaLogin';
-import TelaCadastro from './src/TelasInicais/TelaCadastro';
+import TelaInicial from './src/pages/TelasInicais/TelaInicial';
+import TelaLogin from  './src/pages/TelasInicais/TelaLogin';
+import TelaCadastro from './src/pages/TelasInicais/TelaCadastro';
 import SistemaNavigator from './src/Routes/SistemaNavigator';
 
-import Detalhes from './src/Sistema/Detalhes';
-import Favoritos from './src/Sistema/Favoritos';
+import Detalhes from './src/pages/Sistema/Detalhes';
+import Favoritos from './src/pages/Sistema/Favoritos';
 
 export default function App() {
   return (

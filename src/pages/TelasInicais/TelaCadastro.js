@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import config from "../../config/config.json";
+import config from "../../db/config/config.json";
 import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 
-import DefaultButton from "../DefaultButton/DefaultButton";
+import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
 export default function Cadastro() {
   const navigation = useNavigation();
@@ -45,11 +45,11 @@ export default function Cadastro() {
   return (
     // Esse view vai ser a logo
     <View style={{ flex: 1 }}>
-      <ImageBackground source={require('../Assets/fundoCadastro.jpg')}
+      <ImageBackground source={require('../../Assets/fundoCadastro.jpg')}
         resizeMode="cover" style={{ flex: 1, justifyContent: 'center' }}>
 
         <View style={{ alignItems: 'center' }}>
-          <Image source={require('../Assets/logo.png')} />
+          <Image source={require('../../Assets/logo.png')} />
         </View>
 
         {/* Esse view e a barra do email */}

@@ -15,7 +15,7 @@ const dadosDoUsario = {
     <View style={{flex: 1, backgroundColor: '#000000'}}>
 
       <View style={{alignItems: 'center', padding: 30}}>
-        <Image source={require('../Assets/icon.png')} style={styles.image}/>
+        <Image source={require('../../Assets/icon.png')} style={styles.image}/>
         
         <View style={styles.icon}>
           <Ionicons name='camera-outline' size={35} color='#fff' />

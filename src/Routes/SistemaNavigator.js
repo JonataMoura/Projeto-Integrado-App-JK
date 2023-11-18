@@ -3,10 +3,10 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import Inicio from '../Sistema/Inicio';
-import Config from '../Sistema/Config';
-import Perfil from '../Sistema/Perfil';
-import Lista from '../Sistema/ListaFilmes';
+import Inicio from '../pages/Sistema/Inicio';
+import Config from '../pages/Sistema/Config';
+import Perfil from '../pages/Sistema/Perfil';
+import Lista from '../pages/Sistema/ListaFilmes';
 import EditDrawer from './EditDrawer';
 
 const Drawer = createDrawerNavigator();

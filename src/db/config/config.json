@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "dh3fgBaaagbHh--4E3CbDg2H2cBDH6dc",
+    "database": "railway",
+    "host": "monorail.proxy.rlwy.net",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "dh3fgBaaagbHh--4E3CbDg2H2cBDH6dc",
+    "database": "railway",
+    "host": "monorail.proxy.rlwy.net",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "dh3fgBaaagbHh--4E3CbDg2H2cBDH6dc",
+    "database": "railway",
+    "host": "monorail.proxy.rlwy.net",
+    "dialect": "mysql"
+  },
+
+  "urlRootNode": "http://10.220.30.103:3006/"
+
+}

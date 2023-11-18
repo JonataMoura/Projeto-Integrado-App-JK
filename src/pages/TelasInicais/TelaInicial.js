@@ -1,7 +1,7 @@
 import { ImageBackground, Image, StyleSheet, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import DefaultButton from "../DefaultButton/DefaultButton";
+import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
 export default function App(){
   const navigation = useNavigation();
@@ -16,11 +16,11 @@ export default function App(){
 
   return(
     <View style={{flex: 1}}>
-      <ImageBackground source={require('../Assets/fundoInicio.jpeg')} resizeMode="cover" 
+      <ImageBackground source={require('../../Assets/fundoInicio.jpeg')} resizeMode="cover" 
         style={{flex: 1, justifyContent: 'center'}}>
 
           <View style={{alignItems: 'center'}}>
-            <Image source={require('../Assets/logo.png')} />
+            <Image source={require('../../Assets/logo.png')} />
           </View>
 
         <View style={{ alignItems: 'center'}}> 

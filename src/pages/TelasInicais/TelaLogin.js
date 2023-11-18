@@ -1,11 +1,11 @@
 import React, { useState} from 'react';
-import config from "../../config/config.json";
+import config from "../../db/config/config.json";
 import { Text, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper'
 import { Ionicons  } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 
-import DefaultButton from "../DefaultButton/DefaultButton";
+import DefaultButton from "../../components/DefaultButton/DefaultButton";
 import axios from 'axios';
 
 export default function Login(){
@@ -46,11 +46,11 @@ if (reqs.status === "OK") {
 
   return(
     <View style={{flex: 1}}>
-      <ImageBackground source={require('../Assets/fundoLogin.jpg')} 
+      <ImageBackground source={require('../../Assets/fundoLogin.jpg')} 
         resizeMode="cover" style={{flex: 1, justifyContent: 'center'}}>
 
         <View style={{alignItems: 'center'}}>
-          <Image source={require('../Assets/logo.png')} />
+          <Image source={require('../../Assets/logo.png')} />
         </View>
 
         <View style={styles.back}>
