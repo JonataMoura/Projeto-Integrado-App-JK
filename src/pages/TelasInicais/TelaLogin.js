@@ -33,10 +33,7 @@ async function Login()
      senha: inputs
     })
 
-<<<<<<< HEAD:src/TelasInicais/TelaLogin.js
-  }).then( res => res.json()).then( res => console.log(res))
 
-=======
   }).then( res => res.json()).then( res => res)
   console.log(reqs)
 if (reqs.status === "OK") {
@@ -46,7 +43,7 @@ if (reqs.status === "OK") {
     console.log("error")
   }
 } 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaLogin.js
+
 }
 
   return(

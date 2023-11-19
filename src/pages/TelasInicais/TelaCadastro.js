@@ -4,13 +4,11 @@ import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
-<<<<<<< HEAD:src/TelasInicais/TelaCadastro.js
-import DefaultButton from "../DefaultButton/DefaultButton";
-=======
+
 
 import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaCadastro.js
+
 
 export default function Cadastro() {
   const navigation = useNavigation();
@@ -28,13 +26,7 @@ export default function Cadastro() {
   {
     let  reqs = await fetch(config.urlRootNode + 'create', {
       method: 'POST',
-<<<<<<< HEAD:src/TelasInicais/TelaCadastro.js
-      headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({
-=======
+
 
       headers: {
         Accept: "application/json",
@@ -42,13 +34,12 @@ export default function Cadastro() {
       }, //Os parametros que queremos passar la para o banco de dados
       body: JSON.stringify({
 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaCadastro.js
+
         email: input,
         senha: input2
       })
     }).then( res => res.json()).then(res => res)
-<<<<<<< HEAD:src/TelasInicais/TelaCadastro.js
-=======
+
     console.log(reqs);
     if (reqs.status === "OK") {
       try {
@@ -58,7 +49,7 @@ export default function Cadastro() {
       }
     } 
 
->>>>>>> 672f514ab2b8a90109adeeda2e55f343fb23633c:src/pages/TelasInicais/TelaCadastro.js
+
   }
   
 
