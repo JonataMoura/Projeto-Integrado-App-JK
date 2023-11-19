@@ -1,17 +1,16 @@
-import 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator();
 
-import TelaInicial from './src/pages/TelasInicais/TelaInicial';
-import TelaLogin from  './src/pages/TelasInicais/TelaLogin';
-import TelaCadastro from './src/pages/TelasInicais/TelaCadastro';
-import SistemaNavigator from './src/Routes/SistemaNavigator';
+import TelaInicial from './pages/TelasInicais/TelaInicial';
+import TelaLogin from  './pages/TelasInicais/TelaLogin';
+import TelaCadastro from './pages/TelasInicais/TelaCadastro';
+import SistemaNavigator from './pages/SistemaNavigator';
 
-import Detalhes from './src/pages/Sistema/Detalhes';
-import Favoritos from './src/pages/Sistema/Favoritos';
+import Detalhes from './pages/Sistema/Detalhes';
+import Favoritos from './pages/Sistema/Favoritos';
 
 export default function App() {
   return (
@@ -29,7 +28,7 @@ export default function App() {
         component={TelaInicial}>
         </Stack.Screen>
 
-        <Stack.Screen 
+         <Stack.Screen 
         options={{
           title: '',
           statusBarColor: '#26034D',
@@ -39,7 +38,7 @@ export default function App() {
         }}
         name='TelaLogin' 
         component={TelaLogin}>
-        </Stack.Screen>
+        </Stack.Screen> 
 
         <Stack.Screen 
         options={{
@@ -93,7 +92,7 @@ export default function App() {
         }}
         name='Favoritos' 
         component={Favoritos}>
-        </Stack.Screen>
+        </Stack.Screen> 
 
       </Stack.Navigator>
     </NavigationContainer>

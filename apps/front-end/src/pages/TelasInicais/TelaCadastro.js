@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import config from "../../db/config/config.json";
+//import config from "../../../apps/back-end/src/db/config/config.json";
 import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
-
 
 import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
@@ -24,7 +23,7 @@ export default function Cadastro() {
   //Envia os dados do formulario para o banco 
   async function registerUser() 
   {
-    let  reqs = await fetch(config.urlRootNode + 'create', {
+    let  reqs = await fetch( "", {
       method: 'POST',
 
 
@@ -58,11 +57,11 @@ export default function Cadastro() {
     
     <View style={{ flex: 1 }}>
 
-      <ImageBackground source={require('../../Assets/fundoCadastro.jpg')}
+      <ImageBackground source={require('../../../public/assets/fundoTelaLogin.png')}
         resizeMode="cover" style={{ flex: 1, justifyContent: 'center' }}>
 
         <View style={{ alignItems: 'center' }}>
-          <Image source={require('../../Assets/logo.png')} />
+          <Image source={require('../../../public/assets/logoInicio.png')} />
 
         </View>
 

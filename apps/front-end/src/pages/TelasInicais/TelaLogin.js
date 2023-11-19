@@ -1,12 +1,10 @@
 import React, { useState} from 'react';
-import config from "../../db/config/config.json";
+//import config from "../../../apps/back-end/src/db/config/config.json";
 import { Text, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { Ionicons  } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
-
-import DefaultButton from "../../components/DefaultButton/DefaultButton";
-import axios from 'axios';
+import DefaultButton from '../../components/DefaultButton/DefaultButton';
 
 export default function Login(){
   const navigation = useNavigation();
@@ -22,20 +20,23 @@ export default function Login(){
 async function Login() 
 {
   console.log("chegou");
-  let reqs = await fetch(config.urlRootNode + 'login', {
-    method: 'POST',
-    headers: {
-      'Accept':'application/json',
-      'Content-Type':'application/json'
-    },
-    body: JSON.stringify({
-     email: email,
-     senha: inputs
-    })
+  // let reqs = await fetch("", {
+  //   method: 'POST',
+  //   headers: {
+  //     'Accept':'application/json',
+  //     'Content-Type':'application/json'
+  //   },
+  //   body: JSON.stringify({
+  //    email: email,
+  //    senha: inputs
+  //   })
 
 
-  }).then( res => res.json()).then( res => res)
-  console.log(reqs)
+  // }).then( res => res.json()).then( res => res)
+
+  navigation.navigate("SistemaNavigator")
+  return
+
 if (reqs.status === "OK") {
   try {
     navigation.navigate("SistemaNavigator")
@@ -43,17 +44,16 @@ if (reqs.status === "OK") {
     console.log("error")
   }
 } 
-
 }
 
   return(
     <View style={{flex: 1}}>
 
-      <ImageBackground source={require('../../Assets/fundoLogin.jpg')} 
+      <ImageBackground source={require('../../../public/assets/fundoTelaLogin.png')} 
         resizeMode="cover" style={{flex: 1, justifyContent: 'center'}}>
 
         <View style={{alignItems: 'center'}}>
-          <Image source={require('../../Assets/logo.png')} />
+          <Image source={require('../../../public/assets/logoInicio.png')} />
 
         </View>
 

@@ -7,6 +7,7 @@ import Inicio from '../pages/Sistema/Inicio';
 import Config from '../pages/Sistema/Config';
 import Perfil from '../pages/Sistema/Perfil';
 import Lista from '../pages/Sistema/ListaFilmes';
+import Favoritos from './Sistema/Favoritos';
 
 import EditDrawer from './EditDrawer';
 
