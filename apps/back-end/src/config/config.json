@@ -19,8 +19,8 @@
     "database": "railway",
     "host": "monorail.proxy.rlwy.net",
     "dialect": "mysql"
-  },
+  }
 
-  "urlRootNode": "http://192.168.0.8:3006/"
+  
 
 }

@@ -18,7 +18,7 @@ app.post('/create', async(req,res)=>{
             'email' : req.body.email,
             'senha' : req.body.senha
          })
-         res.json("msg: usuario cadastrado")
+         res.status(200).json({ status: "OK", msg:"usuario cadastrado"})
     }catch(err){
         res.json(err)
 

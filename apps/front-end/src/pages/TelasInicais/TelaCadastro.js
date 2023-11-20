@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import config from "../../../apps/back-end/src/db/config/config.json";
+import config from "../../config/URLnode.json";
 import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
@@ -23,7 +23,7 @@ export default function Cadastro() {
   //Envia os dados do formulario para o banco 
   async function registerUser() 
   {
-    let  reqs = await fetch( "", {
+    let  reqs = await fetch( config.urlRootNode+'create', {
       method: 'POST',
 
 
