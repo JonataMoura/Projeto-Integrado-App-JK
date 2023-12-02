@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import config from "../../config/URLnode.json";
 import { TextInput } from 'react-native-paper';
-import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
+
 
 import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
@@ -12,8 +13,10 @@ import DefaultButton from "../../components/DefaultButton/DefaultButton";
 export default function Cadastro() {
   const navigation = useNavigation();
   const [input, setInput] = useState(null); //aqui fica o valor que o setInput e o nome que e input então fica assim 'input = setInput'
+  const [nome, setNome] = useState(null);
   const [hidePass, setHidepass] = useState(true);
   const [input2, setInput2] = useState(null); //aqui fica o valor que o setInput2 e o nome que e input2 então fica assim 'input2 = setInput2'
+  const [confirmar, setConfirmar] = useState(null);
   const [hidePass2, setHidepass2] = useState(true);
 
   const NavigationSistema = () => {
@@ -23,7 +26,7 @@ export default function Cadastro() {
   //Envia os dados do formulario para o banco 
   async function registerUser() 
   {
-    let  reqs = await fetch( config.urlRootNode+'create', {
+    let  reqs = await fetch( config.urlRootNode +'create', {
       method: 'POST',
 
 
@@ -32,10 +35,10 @@ export default function Cadastro() {
         "Content-Type": "application/json",
       }, //Os parametros que queremos passar la para o banco de dados
       body: JSON.stringify({
-
-
+        nome: nome,
         email: input,
-        senha: input2
+        senha: input2,
+        confirmars: confirmar
       })
     }).then( res => res.json()).then(res => res)
 
@@ -44,7 +47,8 @@ export default function Cadastro() {
       try {
         navigation.navigate("TelaLogin")
       } catch (error) {
-        console.log("error")
+        Alert.alert("Senha incorreta")
+        return
       }
     } 
 
@@ -61,12 +65,21 @@ export default function Cadastro() {
         resizeMode="cover" style={{ flex: 1, justifyContent: 'center' }}>
 
         <View style={{ alignItems: 'center' }}>
-          <Image source={require('../../../public/assets/logoInicio.png')} />
+          <Image source={require('../../../public/assets/logoSpaceCine.png')} />
 
         </View>
 
         {/* Esse view e a barra do email */}
         <View style={styles.container}>
+          <TextInput
+            backgroundColor="#000000"
+            underlineColor="#B6B6B6"
+            activeUnderlineColor="#B6B6B6"
+            onChangeText={(texto) => setNome(texto)}
+            Value={nome}
+            textColor="#fff"
+            label="Nome"
+          />
           <TextInput
             backgroundColor="#000000"
             underlineColor="#B6B6B6"
@@ -89,6 +102,7 @@ export default function Cadastro() {
               onChangeText={(texto) => setInput2(texto)}
               label="Senha"
             />
+            
             {/* Aqui e o botão que chama a função para mudar o valor do olho e esconder o texto   */}
             <TouchableOpacity
               style={styles.icon}
@@ -102,11 +116,36 @@ export default function Cadastro() {
             </TouchableOpacity>
           </View>
           {/* Esse view e a barra da CORFIRMAR SENHA */}
-
+{/* Esse view e a barra da senha */}
+<View style={styles.senha}>
+            
+            <TextInput
+              backgroundColor="#000000"
+              underlineColor="#B6B6B6"
+              activeUnderlineColor="#B6B6B6"
+              textColor="#fff"
+              secureTextEntry={hidePass}
+              style={styles.input}
+              value={confirmar}
+              onChangeText={(texto) => setConfirmar(texto)}
+              label="Confirmar senha"
+            />
+            {/* Aqui e o botão que chama a função para mudar o valor do olho e esconder o texto   */}
+            <TouchableOpacity
+              style={styles.icon}
+              onPress={() => setHidepass(!hidePass)}
+            >
+              {hidePass ? (
+                <Ionicons name="eye" size={25} color="gray" />
+              ) : (
+                <Ionicons name="eye-off" size={25} color="gray" />
+              )}
+            </TouchableOpacity>
+          </View>
           {/* vai ficar o nome "Já tem uma conta?" */}
           <View style={{ alignSelf: "flex-end", paddingRight: 10 }}>
             <Text style={styles.texto}>
-              Já tem uma conta?{input}-{input2}{" "}
+              Já tem uma conta?
             </Text>
           </View>
         </View>

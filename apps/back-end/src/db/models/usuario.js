@@ -37,8 +37,10 @@ const User = db.define('User', {
     autoIncrement: true,
     unique: true
   },
+       nome: DataTypes.STRING,
        email: DataTypes.STRING,
-       senha: DataTypes.STRING
+       senha: DataTypes.STRING,
+       
 })
 
 module.exports = User

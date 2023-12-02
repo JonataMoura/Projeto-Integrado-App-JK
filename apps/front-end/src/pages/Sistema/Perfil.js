@@ -31,7 +31,7 @@ const dadosDoUsario = {
         <View style={{paddingLeft: 65, width: '90%'}}>
           <TextInput
           onChangeText={(text) => dadosDoUsario.nome = text}
-            placeholder='Lucas'
+            placeholder='Daniely'
             selectionColor='#fff'
             placeholderTextColor="#B6B6B6"
             style={styles.input}

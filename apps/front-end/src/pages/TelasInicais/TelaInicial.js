@@ -20,7 +20,7 @@ export default function App(){
         style={{flex: 1, justifyContent: 'center'}}>
 
           <View style={{alignItems: 'center'}}>
-            {/* <Image source={require('../../../public/assets/7.png')} /> */}
+            { <Image source={require('../../../public/assets/logoSpaceCine.png')} /> }
 
           </View>
 
