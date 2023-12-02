@@ -144,9 +144,12 @@ export default function Cadastro() {
           </View>
           {/* vai ficar o nome "Já tem uma conta?" */}
           <View style={{ alignSelf: "flex-end", paddingRight: 10 }}>
-            <Text style={styles.texto}>
-              Já tem uma conta?
-            </Text>
+          <TouchableOpacity
+          style={styles.buttonLogin}
+          onPress={() => navigation.navigate('TelaLogin')}
+        >
+          <Text style={styles.registerText}>Já possui uma conta? Faça login</Text>
+        </TouchableOpacity>
           </View>
         </View>
         {/* Aqui e o botão cadastrar */}
@@ -215,5 +218,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#FFFFFF",
     fontSize: 18,
+  },
+
+  registerText: {
+    color: '#a1a1a1',
+  },
+  
+  buttonLogin: {
+    marginTop: 14,
+    alignSelf: 'center',
   },
 });

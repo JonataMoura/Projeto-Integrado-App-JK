@@ -95,7 +95,12 @@ return
           </View>
 
           <View style={{alignSelf: 'flex-end', paddingRight: 10}}>
-            <Text style={styles.texto}>Esqueceu a senha?</Text>
+          <TouchableOpacity
+          style={styles.buttonRegister}
+          onPress={() => navigation.navigate('TelaCadastro')}
+        >
+          <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
+        </TouchableOpacity>
           </View>
         </View>
           
@@ -148,5 +153,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#000000',
     fontSize: 18,
-  }
+  },
+
+  buttonRegister: {
+    marginTop: 14,
+    alignSelf: 'center',
+  },
+  
+  registerText: {
+    color: '#a1a1a1',
+  },
 });
