@@ -17,7 +17,7 @@ const EditDrawer = (props) => {
                             <Image source={require('../../public/assets/icon.png')} 
                                 style={{height: 60, width: 60, borderRadius: 40, marginBottom: 10, marginRight: 20}}
                             />
-                            <Text style={{color: '#FCFCFC', fontSize: 18, marginBottom: 5}}>Lucas</Text>
+                            <Text style={{color: '#FCFCFC', fontSize: 18, marginBottom: 5}}>Jonata</Text>
                         </View>
                     </View>
                 </ImageBackground>

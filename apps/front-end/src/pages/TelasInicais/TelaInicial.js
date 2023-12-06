@@ -4,6 +4,12 @@ import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
 export default function App(){
   const navigation = useNavigation();
+ 
+ 
+  const NavigationSistema = () => {
+    navigation.navigate("SistemaNavigator");
+  };
+
 
   const NavigationLogin = () => {
     navigation.navigate("TelaLogin");
@@ -41,6 +47,16 @@ export default function App(){
             width={200}
             height={50}
           />
+           <View style={{ alignItems: "center" }}>
+           <DefaultButton
+            marginTop={14}
+            backgroundColor={'#000000'}
+            buttonText={'Entrar como visitante'}
+            click={NavigationSistema}
+            width={200}
+            height={50}
+          />
+        </View>
         </View>
         
       </ImageBackground>

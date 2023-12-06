@@ -1,11 +1,11 @@
 import React, { useState} from 'react';
 import config from "../../config/URLnode.json";
-import { Text, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { Text, Image, View, StyleSheet, ImageBackground, TouchableOpacity, Alert } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { Ionicons  } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
-
+import { Toast } from 'toastify-react-native';
 
 export default function Login(){
   const navigation = useNavigation();
@@ -28,24 +28,20 @@ async function Login()
        'Content-Type':'application/json'
      },
      body: JSON.stringify({
-      email: email,
-      senha: inputs
+      email: email.replace(/\s/g, ''),
+      senha: inputs.replace(/\s/g, '')
      })
 
 
   }).then( res => res.json()).then( res => res)
 console.log(reqs)
 if (reqs.status === "OK") {
-  try {
-    navigation.navigate("SistemaNavigator")
-  } catch (error) {
-    Toastify({
-      text: "algo deu errado",
-      position: 'center'
-    }).showToast();
-    console.log("error")
-  }
-} 
+  navigation.navigate("SistemaNavigator")
+} else if(reqs.status ==="senha err"){
+  Toast.error(reqs.msg)
+}else{
+  Toast.error(reqs.msg)
+}
 return
 }
 

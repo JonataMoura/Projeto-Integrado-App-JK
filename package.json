@@ -4,7 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "server": "npx nodemon ./apps/back-end/src/controller.js",
+    "server": "npx nodemon ./apps/back-end/src/Routes/Controller.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -36,7 +36,8 @@
     "react-native-screens": "~3.18.0",
     "react-native-web": "~0.18.9",
     "reactstrap": "^9.2.0",
-    "sequelize": "^6.34.0"
+    "sequelize": "^6.34.0",
+    "toastify-react-native": "^4.0.0"
   },
   "type": "commonjs",
   "devDependencies": {

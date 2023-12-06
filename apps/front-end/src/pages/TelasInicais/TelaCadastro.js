@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-paper';
 import { ImageBackground, Image, StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
-
+import Container, { Toast } from 'toastify-react-native'
 
 import DefaultButton from "../../components/DefaultButton/DefaultButton";
 
@@ -23,6 +23,7 @@ export default function Cadastro() {
     navigation.navigate("TelaLogin");
   };
 
+
   //Envia os dados do formulario para o banco 
   async function registerUser() 
   {
@@ -33,24 +34,21 @@ export default function Cadastro() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-      }, //Os parametros que queremos passar la para o banco de dados
+      },
       body: JSON.stringify({
         nome: nome,
-        email: input,
-        senha: input2,
-        confirmars: confirmar
+        email: input.replace(/\s/g, ''),
+        senha: input2.replace(/\s/g, ''),
+        confirmars: confirmar.replace(/\s/g, '')
       })
     }).then( res => res.json()).then(res => res)
 
     console.log(reqs);
     if (reqs.status === "OK") {
-      try {
         navigation.navigate("TelaLogin")
-      } catch (error) {
-        Alert.alert("Senha incorreta")
-        return
-      }
-    } 
+    } else{
+      Toast.error(reqs.msg)
+    }
 
 
   }
@@ -59,8 +57,8 @@ export default function Cadastro() {
   return (
     // Esse view vai ser a logo
     
-    <View style={{ flex: 1 }}>
-
+    <View style={{ flex: 1 }}> 
+  <Container position="top"/>
       <ImageBackground source={require('../../../public/assets/fundoTelaLogin.png')}
         resizeMode="cover" style={{ flex: 1, justifyContent: 'center' }}>
 
@@ -164,6 +162,8 @@ export default function Cadastro() {
             height={50}
           />
         </View>
+
+       
       </ImageBackground>
     </View>
 

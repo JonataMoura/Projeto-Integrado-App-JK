@@ -38,8 +38,7 @@ const User = db.define('User', {
     unique: true
   },
        nome:{
-        type: DataTypes.STRING,
-        unique: true
+        type: DataTypes.STRING
        },
        email:{
         type:DataTypes.STRING,
